@@ -1,0 +1,40 @@
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 5vh;
+}
+
+
+nav {
+    margin: auto;
+}
+
+nav ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3vh; 
+    justify-content: center; 
+    font-size: 3vh;
+   
+  }
+  
+nav li a {
+  text-decoration: none; 
+  color: black;
+  
+  padding: 1vh;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+#line-break {
+  margin-top: 2vh;
+}
