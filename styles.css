@@ -5,7 +5,7 @@
 
 .page-title {
     text-align: center;
-    font-size: 5vh;
+    font-size: 3vh;
 }
 
 
@@ -20,7 +20,7 @@ nav ul {
     display: flex;
     gap: 3vh; 
     justify-content: center; 
-    font-size: 3vh;
+    font-size: 2vh;
    
   }
   
@@ -37,4 +37,16 @@ nav li a:hover {
 
 #line-break {
   margin-top: 2vh;
+}
+
+
+.visualization {
+  text-align: center;
+  justify-content: center;
+}
+
+.visualization p {
+  width: 50%;
+  text-align: center;
+  margin: auto;
 }
