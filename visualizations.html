@@ -11,7 +11,7 @@
 
 
   <main>
-    <!-- Page-specific content here -->
+    <!-- Visualization #1  -->
     <div class="visualization">
       <h2>Visualization #1 - Bar Chart (Altair) </h2>
       <img src="chart.png" alt="Bar Chart: Income Distribution by Education Level" />
@@ -20,7 +20,28 @@
         of people earn over $50,000.  Overall increase in porportion of over $50,000 earners as education level increases indicates a possibly correlation between eduaction and earning potential.</p>
       </p>
     </div>
+    
+    
+    <!-- Visualization #2 -->
+    <div class="visualization">
+      <h2>Visualization #2 - Box Plot (D3.js)</h2>
+      <p>Examining whether high earners consistently work more hours.</p>
+      <div id="boxplot"></div>
 
+    </div>
+    
+    <!-- Visualization #3 -->
+    <div class="visualization">
+      <h2>Visualization #3 - Choropleth</h2>
+      <p>Examining whether high earners consistently work more hours.</p>
+      <iframe src="choropleth.html" width="600" height="400"></iframe>
+    </div>
+
+    
+
+
+
+  
 
   </main>
 
@@ -37,7 +58,8 @@
 
 
 
-
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="boxplotScript.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
