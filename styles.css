@@ -1,6 +1,17 @@
 
 * {
-  font-family: 'Roboto', sans-serif;
+
+  font-family: "Poppins", "Roboto", sans-serif;
+  
+}
+
+header {
+  
+}
+
+hr {
+  border: 1px solid #ccc; /* Use a lighter border color */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a softer shadow */
 }
 
 .page-title {
@@ -25,6 +36,8 @@ nav ul {
     
    
   }
+
+
   
 nav li a {
   text-decoration: none; 
@@ -46,10 +59,10 @@ nav li a:hover {
 .visualization {
   text-align: center;
   justify-content: center;
-  border: 0.5px solid black;
-  box-shadow: 2px 2px;
+  border: 1px solid #ccc; /* Use a lighter border color */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Add a softer shadow */
   margin: auto;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
   width: 97%;
 }
 

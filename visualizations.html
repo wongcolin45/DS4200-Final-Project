@@ -3,73 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Visualizations - Visualizing Socioeconomic Factors Behind Income Inequality</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+    .visualization {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .visualization h2 {
+      margin-top: 0;
+    }
+    .visualization p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    /* Ensure embedded elements are rounded and responsive */
+    .visualization img,
+    .visualization iframe,
+    .visualization div {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    #boxplot {
+      min-height: 600px;
+    }
+  </style>
 </head>
 <body>
-  <div id="header-container"></div>
-
+  <header>
+    <h1>Visualizing Socioeconomic Factors Behind Income Inequality</h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="visualizations.html" class="active">Visualizations</a></li>
+        <li><a href="conclusions.html">Conclusions</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-    <!-- Visualization #1  -->
+    <!-- Visualization #1: Bar Chart (Image) -->
     <div class="visualization">
-      <h2>Visualization #1 - Bar Chart (Altair) </h2>
-      <p>Show the proportion of individuals earning >50K vs <=50K for each education level (sorted by educational attainment).</p>
+      <h2>Visualization #1 - Bar Chart (Altair)</h2>
       <img src="chart.png" alt="Bar Chart: Income Distribution by Education Level" />
       <p>The bar char shows the likelhood of earning over $50,000 changes at differening level of educations, represented on the bottom x axis. Lower levels of education from preschool through grade school we can see
-        a majority of people make less than $50,000.  Once we reach high school levels of eduction we seen the porportion of over $50,000 earner increase and as we reach post-college education we can see a strong majority 
+        a majority of people make less than $50,000.  Once we reach high school levels of eduction we seen the porportion of over $50,000 earner increase and as we reach post-college education we can see a strong majority
         of people earn over $50,000.  Overall increase in porportion of over $50,000 earners as education level increases indicates a possibly correlation between eduaction and earning potential.</p>
       </p>
     </div>
-    
-    <!-- Visualization #2 -->
+
+    <!-- Visualization #2: Stacked Horizontal Bar Plot (Interactive via iframe) -->
     <div class="visualization">
       <h2>Visualization #2 - Stacked Horizontal Bar Plot (Altair)</h2>
-      <p>Compare income categories across combinations of gender and race using stacked bars.</p>
-      <iframe src="visualization-2.html" width="1400" height="700"></iframe>
-      <p>The visualization reveals a clear demographic breakdown of income by gender, with an added layer of racial composition. By grouping individuals into combined “gender – income” categories, the chart shows that lower-income groups (≤50K) have substantially higher counts compared to higher-income groups (>50K) for both females and males. Within these groups, the racial breakdown is evident—White individuals dominate the counts in both income brackets, while other races such as Black, Asian-Pac-Islander, Amer-Indian-Eskimo, and Other are represented to lesser extents. This pattern points to underlying disparities in income distribution that vary not only by gender but also by race, suggesting areas for further socio-economic analysis and targeted policy exploration.  The design of the visualization was carefully conceptualized to simplify complex multi-dimensional data into a clear and accessible format. By combining gender and income into a single grouping variable, the chart allows for straightforward comparisons across demographic segments. The choice of a grouped bar chart is effective for emphasizing the differences in counts, while the use of a consistent categorical color scale helps differentiate racial groups without overwhelming the viewer. Enhanced interactivity through tooltips enables users to explore the detailed counts and total values behind each bar, ensuring that critical insights are easily accessible. Overall, the design prioritizes clarity and user engagement, transforming intricate data into a compelling narrative of income and demographic variation.</p>
+      <iframe src="visualization-2.html" width="1400" height="700" title="Stacked Horizontal Bar Plot"></iframe>
+      <p>The visualization highlights income distribution by gender and race. It shows that lower-income groups (≤50K) are more prevalent than higher-income groups (>50K) for both males and females. White individuals dominate across all income brackets, while other racial groups are less represented. The chart underscores disparities in income linked to both gender and race, suggesting the need for further socio-economic analysis.</p>
     </div>
 
-    
-    <!-- Visualization #3 -->
+    <!-- Visualization #3: Box Plot (D3.js) -->
     <div class="visualization">
-      <h2>Visualization #2 - Box Plot (D3.js)</h2>
-      <p>Examining whether high earners consistently work more hours.</p>
+      <h2>Visualization #3 - Box Plot (D3.js)</h2>
       <div id="boxplot"></div>
       <p>The box plot illustrates that individuals earning more than $50,000 per year generally work slightly more hours per week compared to those earning less. However, the interquartile ranges (IQRs) for both income groups—those earning ≤$50k and >$50k—overlap, indicating that the difference in work hours is subtle. While the median number of work hours is slightly higher for the higher-income group, both groups exhibit a wide spread in weekly work hours, suggesting considerable variation regardless of income level.</p>
+
     </div>
 
-    <!-- Visualization #4 -->
+    <!-- Visualization #4: Interactive Scatter Plot (Altair) -->
     <div class="visualization">
       <h2>Visualization #4 - Interactive Scatter Plot (Altair)</h2>
-      <p>Show how capital gain varies with age. Add dropdown filters for education and income.</p>
-      <iframe src="visualization-4.html" width="1200" height="750"></iframe>
-      <p>This interactive scatter plot highlights how capital gains vary by age and enables users to zoom in on different demographic slices using the education and income filters. At a glance, the bulk of observations cluster around lower capital gains, reflecting that most individuals in the dataset have minimal to no additional capital income. Outliers with very high capital gains can be easily spotted, illustrating potential wealth disparities within the population. By filtering on specific education levels or income brackets, patterns or clusters can emerge—such as whether higher levels of education correspond to greater capital gains—providing a more nuanced understanding of how these attributes intersect with wealth accumulation.  The visualization is designed for straightforward exploration of how age correlates with capital gain, while still allowing flexibility to examine subgroups. A scatter plot was chosen for its ability to display individual data points and outliers clearly, emphasizing the overall spread. Two dropdown menus—Education and Income—are implemented as interactive parameters, letting viewers isolate particular educational backgrounds or income levels on demand. Large circle markers, combined with tooltips, ensure essential information like age, capital gain, education, and income is readily visible when hovering over any point. This approach balances clarity with interactivity: it conveys big-picture distribution patterns and simultaneously supports a deeper dive into demographic nuances.</p>
+      <iframe src="visualization-4.html" width="1200" height="750" title="Interactive Scatter Plot"></iframe>
+      <p>This interactive scatter plot shows how capital gains vary by age, with filters for education and income to explore specific demographic patterns. Most data points cluster at low capital gains, while a few high-gain outliers highlight wealth disparities. Filtering by education or income reveals potential trends, such as whether higher education links to greater capital gains, offering deeper insights into wealth accumulation.</p>
     </div>
-    
-    <!-- Visualization #5 -->
+
+    <!-- Visualization #5: Choropleth Map -->
     <div class="visualization">
-      <h2>Visualization #5 - Choropleth</h2>
-      <p>Examining whether high earners consistently work more hours.</p>
-      <iframe src="choropleth.html" width="800" height="500"></iframe>
+      <h2>Visualization #5 - Choropleth Map</h2>
+      <iframe src="choropleth.html" width="800" height="500" title="Choropleth Map"></iframe>
       <p>The choropleth map displays the percentage of individuals earning more than $50,000 across different countries. Darker shades represent a higher proportion of high earners. The United States stands out with a significantly larger sample size, which may limit the accuracy of direct comparisons with other countries. Nonetheless, the visualization begins to reveal global trends and disparities in income distribution.
       </p>
     </div>
-
-
   </main>
-
-
-
-  <script>
-    fetch('header.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('header-container').innerHTML = html;
-      });
-  </script>
-    
-
 
 
   <script src="https://d3js.org/d3.v7.min.js"></script>

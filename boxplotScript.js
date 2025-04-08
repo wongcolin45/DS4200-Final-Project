@@ -6,8 +6,8 @@ d3.csv("adult_clean.csv").then(function(data) {
     });
 
     const margin = {top: 50, right: 50, bottom: 50, left: 70},
-        width = 600,
-        height = 400;
+        width = 850,
+        height = 600;
 
     const svg = d3.select("#boxplot")
                 .append("svg")

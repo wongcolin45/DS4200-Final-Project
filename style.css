@@ -1,0 +1,68 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f8f8; /* Off white background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0 0 8px 8px; /* Rounded bottom edges */
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* Navigation Styling */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 25px; /* Fully rounded */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+
+/* Main Content Styling */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 20px;
+}
