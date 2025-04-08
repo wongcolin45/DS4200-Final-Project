@@ -20,15 +20,18 @@ nav ul {
     display: flex;
     gap: 3vh; 
     justify-content: center; 
-    font-size: 2vh;
+    font-size: 1.5vh;
+ 
+    
    
   }
   
 nav li a {
   text-decoration: none; 
   color: black;
-  
+
   padding: 1vh;
+  
 }
 
 nav li a:hover {
@@ -43,10 +46,19 @@ nav li a:hover {
 .visualization {
   text-align: center;
   justify-content: center;
+  border: 0.5px solid black;
+  box-shadow: 2px 2px;
+  margin: auto;
+  margin-bottom: 10vh;
+  width: 97%;
 }
 
 .visualization p {
+  
   width: 50%;
   text-align: center;
   margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+  font-size: 2vh;
 }
