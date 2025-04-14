@@ -13,7 +13,7 @@ d3.csv("adult_clean.csv").then(function(data) {
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
-                .style("background", "lightyellow");
+                .style("background", "white");
 
     // income groups
     const incomeGroups = [...new Set(data.map(d => d.income))];

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-1bfaab172753bf9e2d1436cb2fbf0fcc"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "race", "scale": {"scheme": "category10"}, "title": "Race", "type": "nominal"}, "tooltip": [{"field": "group", "title": "Group", "type": "nominal"}, {"aggregate": "sum", "field": "count", "title": "Count", "type": "quantitative"}, {"aggregate": "max", "field": "total", "title": "Total Count", "type": "quantitative"}, {"aggregate": "sum", "field": "percentage", "format": ".2%", "title": "Percentage", "type": "quantitative"}], "x": {"aggregate": "sum", "field": "count", "title": "Count", "type": "quantitative"}, "y": {"field": "group", "sort": ["Female - Low Income", "Male - Low Income", "Female - High Income", "Male - High Income"], "title": "Gender and Income", "type": "nominal"}}, "height": 600, "params": [{"name": "RaceSelection", "bind": {"input": "select", "options": ["All", "Amer-Indian-Eskimo", "Asian-Pac-Islander", "Black", "Other", "White"], "name": "Race: "}, "value": "All"}], "title": {"text": "Income by Gender and Race (Low vs. High Income Groups)", "subtitle": "Low Income - <= $50,000 | High Income - > $50,000"}, "transform": [{"filter": "datum.race == RaceSelection || RaceSelection == 'All'"}], "width": 1100, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-1bfaab172753bf9e2d1436cb2fbf0fcc": [{"gender": "Female", "income_group": "High Income", "race": "Amer-Indian-Eskimo", "count": 14, "total": 1669, "percentage": 0.008388256440982624, "group": "Female - High Income"}, {"gender": "Female", "income_group": "High Income", "race": "Asian-Pac-Islander", "count": 65, "total": 1669, "percentage": 0.03894547633313361, "group": "Female - High Income"}, {"gender": "Female", "income_group": "High Income", "race": "Black", "count": 126, "total": 1669, "percentage": 0.07549430796884361, "group": "Female - High Income"}, {"gender": "Female", "income_group": "High Income", "race": "Other", "count": 9, "total": 1669, "percentage": 0.005392450569203115, "group": "Female - High Income"}, {"gender": "Female", "income_group": "High Income", "race": "White", "count": 1455, "total": 1669, "percentage": 0.871779508687837, "group": "Female - High Income"}, {"gender": "Female", "income_group": "Low Income", "race": "Amer-Indian-Eskimo", "count": 152, "total": 13026, "percentage": 0.011668969752802088, "group": "Female - Low Income"}, {"gender": "Female", "income_group": "Low Income", "race": "Asian-Pac-Islander", "count": 371, "total": 13026, "percentage": 0.02848149854137878, "group": "Female - Low Income"}, {"gender": "Female", "income_group": "Low Income", "race": "Black", "count": 1958, "total": 13026, "percentage": 0.15031475510517428, "group": "Female - Low Income"}, {"gender": "Female", "income_group": "Low Income", "race": "Other", "count": 117, "total": 13026, "percentage": 0.008982035928143712, "group": "Female - Low Income"}, {"gender": "Female", "income_group": "Low Income", "race": "White", "count": 10428, "total": 13026, "percentage": 0.8005527406725012, "group": "Female - Low Income"}, {"gender": "Male", "income_group": "High Income", "race": "Amer-Indian-Eskimo", "count": 39, "total": 9539, "percentage": 0.004088478876192473, "group": "Male - High Income"}, {"gender": "Male", "income_group": "High Income", "race": "Asian-Pac-Islander", "count": 304, "total": 9539, "percentage": 0.03186916867596184, "group": "Male - High Income"}, {"gender": "Male", "income_group": "High Income", "race": "Black", "count": 408, "total": 9539, "percentage": 0.0427717790124751, "group": "Male - High Income"}, {"gender": "Male", "income_group": "High Income", "race": "Other", "count": 36, "total": 9539, "percentage": 0.0037739805011007444, "group": "Male - High Income"}, {"gender": "Male", "income_group": "High Income", "race": "White", "count": 8752, "total": 9539, "percentage": 0.9174965929342699, "group": "Male - High Income"}, {"gender": "Male", "income_group": "Low Income", "race": "Amer-Indian-Eskimo", "count": 230, "total": 20988, "percentage": 0.010958643034114732, "group": "Male - Low Income"}, {"gender": "Male", "income_group": "Low Income", "race": "Asian-Pac-Islander", "count": 563, "total": 20988, "percentage": 0.02682485229655041, "group": "Male - Low Income"}, {"gender": "Male", "income_group": "Low Income", "race": "Black", "count": 1736, "total": 20988, "percentage": 0.08271393177053554, "group": "Male - Low Income"}, {"gender": "Male", "income_group": "Low Income", "race": "Other", "count": 191, "total": 20988, "percentage": 0.009100438345721365, "group": "Male - Low Income"}, {"gender": "Male", "income_group": "Low Income", "race": "White", "count": 18268, "total": 20988, "percentage": 0.8704021345530779, "group": "Male - Low Income"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
